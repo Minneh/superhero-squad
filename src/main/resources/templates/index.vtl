@@ -4,6 +4,9 @@
     <!-- foreach loop to display all heroes -->
     #foreach ($hero in $heroes)
       <li>$hero.getName()</li>
+      <li>$hero.getAge()</li>
+      <li>$hero.getSpecialPower()</li>
+      <li>$hero.getWeakness()</li>
     #end
   </ul>
 #else
