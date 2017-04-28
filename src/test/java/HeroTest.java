@@ -5,7 +5,7 @@ public class HeroTest{
   Hero myHero;
   @Before
   public void instantiating() {
-    myHero = new Hero("Superman");
+    myHero = new Hero("Superman", 35, "Flight", "Kryptonite");
   }
 
   @Test
