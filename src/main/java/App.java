@@ -13,9 +13,21 @@ public class App {
 
   get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("heroes", request.session().attribute("heroes"));
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("heroes/new", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/hero-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/heroes", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("heroes", Hero.all());
+      model.put("template", "templates/heroes");
+      return nnew ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/heroes", (request, response) -> {
