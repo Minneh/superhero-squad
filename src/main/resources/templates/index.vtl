@@ -1,4 +1,10 @@
 <h1>List of Heroes!</h1>
+#if ($hero)
+  <p>Current hero:</p>
+  <p>$hero.getName()</p>
+#else
+  <p>No heroes!</p>
+#end
 
 <p>Add a new hero: </p>
 
