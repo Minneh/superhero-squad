@@ -10,7 +10,7 @@ public class HeroTest{
 
   @Test
   public void Hero_instantiatesWithName_String() {
-    Hero myHero = new Hero("Mow the lawn");
-    assertEquals("Mow the lawn", myHero.getName());
+    Hero myHero = new Hero("Superman");
+    assertEquals("Superman", myHero.getName());
   }
 }
