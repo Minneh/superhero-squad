@@ -22,4 +22,11 @@ public class SquadTest {
     assertEquals(true, Squad.all().contains(firstSquad));
     assertEquals(true, Squad.all().contains(secondSquad);
   }
+
+  @Test
+  public void clear_emptiesAllSquadsFromList_0(){
+    Squad testSquad = new Squad("Justice League");
+    Squad.clear();
+    assertEquals(Category.all().size(), 0);
+  }
 }
