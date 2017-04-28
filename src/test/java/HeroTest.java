@@ -33,4 +33,11 @@ public class HeroTest{
     Hero.clear();
     assertEquals(Hero.all().size(), 0);
   }
+
+  @Test
+  public void getId_heroesInstantiateWithAnID_1() {
+    Hero.clear();  // Remember, the test will fail without this line! We need to empty leftover Heros from previous tests!
+    Hero myHero = new Hero("Superman", 35, "Flight", "Kryptonite");
+    assertEquals(1, myHero.getId());
+}
 }
