@@ -14,4 +14,12 @@ public class SquadTest {
     Squad testSquad = new Squad("Justice League");
     assertEquals("Justice League", testSquad.getName());
   }
+
+  @Test
+  public void all_returnsAllinstancesOfSquad_true(){
+    Squad firstSquad = new Squad("Justice League");
+    Squad secondSquad = new Squad("The Avengers");
+    assertEquals(true, Squad.all().contains(firstSquad));
+    assertEquals(true, Squad.all().contains(secondSquad);
+  }
 }

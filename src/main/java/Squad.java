@@ -8,4 +8,8 @@ public class Squad{
   public String getName() {
     return mName;
   }
+
+  public static List<Squad> all() {
+   return instances;
+ }
 }
