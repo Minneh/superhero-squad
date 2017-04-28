@@ -87,6 +87,21 @@ public class App {
       return new ModelAndView(model, layout);
      }, new VelocityTemplateEngine());
 
+     post("/heroes", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      Squad squad = Squad.find(Integer.parseInt(request.queryParams("squadId")));
+
+      String name = request.queryParams("name");
+      Hero newHero = new Hero(name);
+
+      squad.addHero(newHero);
+
+      model.put("squad", squad);
+      model.put("template", "templates/squad-heroes-success.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
      post("/squads", (request, response) -> {
        Map<String, Object> model = new HashMap<String, Object>();
        String name = request.queryParams("name");
