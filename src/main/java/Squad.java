@@ -5,11 +5,13 @@ public class Squad{
   private String mName;
   private static List<Squad> instances = new ArrayList<Squad>();
   private int mId;
+  private List<Hero> mHeroes;
 
   public Squad(String name){
     mName = name;
     instances.add(this);
     mId = instances.size();
+    mHeroes = new ArrayList<Hero>();
   }
 
   public String getName() {
@@ -31,5 +33,13 @@ public class Squad{
 //function to locate specific squad based on its id
  public static Squad find(int id){
    return instances.get(id - 1);
+ }
+
+ public List<Task> getHeroes(){
+   return mHeroes;
+ }
+
+ public void addHero(Hero hero){
+   mHeroes.add(hero);
  }
 }
