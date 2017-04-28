@@ -35,7 +35,7 @@ public class Squad{
    return instances.get(id - 1);
  }
 
- public List<Task> getHeroes(){
+ public List<Hero> getHeroes(){
    return mHeroes;
  }
 

@@ -17,11 +17,11 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // get("/heroes/new", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("template", "templates/hero-form.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+    get("/heroes/new", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/hero-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
     get("squads/:id/heroes/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -93,7 +93,10 @@ public class App {
       Squad squad = Squad.find(Integer.parseInt(request.queryParams("squadId")));
 
       String name = request.queryParams("name");
-      Hero newHero = new Hero(name);
+      int age = Integer.parseInt(request.queryParams("age"));
+      String specialPower = request.queryParams("specialPower");
+      String weakness = request.queryParams("weakness");
+      Hero newHero = new Hero(name, age, specialPower, weakness);
 
       squad.addHero(newHero);
 
