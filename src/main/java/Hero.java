@@ -8,6 +8,7 @@ public class Hero{
   private String mSpecialPower;
   private String mWeakness;
   private static List<Hero> instances = new ArrayList<Hero>();
+  private int mId;
 
   //Hero class with a constructor that (for now) takes only one argument: the superhero's name
   public Hero(String name, int age, String specialPower, String weakness){
@@ -16,6 +17,8 @@ public class Hero{
     mSpecialPower = specialPower;
     mWeakness = weakness;
     instances.add(this);
+    mId = instances.size();
+
   }
 
   //function to return a hero's name
@@ -42,7 +45,7 @@ public class Hero{
   public static void clear() {
     instances.clear();
   }
-  
+
   public int getId() {
     return mId;
   }
