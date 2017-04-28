@@ -50,7 +50,7 @@ public class Hero{
     return mId;
   }
 
-  public static Task find(int id) {
+  public static Hero find(int id) {
     return instances.get(id - 1);
   }
 }
