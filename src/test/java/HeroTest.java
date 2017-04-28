@@ -39,5 +39,11 @@ public class HeroTest{
     Hero.clear();  // Remember, the test will fail without this line! We need to empty leftover Heros from previous tests!
     Hero myHero = new Hero("Superman", 35, "Flight", "Kryptonite");
     assertEquals(1, myHero.getId());
-}
+  }
+    @Test
+    public void find_returnsHeroWithSameId_secondHero() {
+      Hero firstHero = new Hero("Mow the lawn");
+      Hero secondHero = new Hero("Buy groceries");
+      assertEquals(Hero.find(secondHero.getId()), secondHero);
+    }
 }
