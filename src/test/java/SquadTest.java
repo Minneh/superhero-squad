@@ -29,4 +29,9 @@ public class SquadTest {
     Squad.clear();
     assertEquals(Category.all().size(), 0);
   }
+
+  @Test public void getId_squadsInstantiateWihtAnId_1(){
+    Squad testSquad = new Squad("Justice League");
+    assertEquals(1, testSquad.getId());
+  }
 }

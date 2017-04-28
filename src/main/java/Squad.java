@@ -1,8 +1,12 @@
 public class Squad{
   private String mName;
+  private static List<Squad> instances = new ArrayList<Squad>();
+  private int mId;
 
   public Squad(String name){
     mName = name;
+    instances.add(this);
+    mId = instances.size();
   }
 
   public String getName() {
@@ -15,5 +19,9 @@ public class Squad{
 
  public static void clear(){
    instances.clear();
+ }
+
+ public int getId(){
+   return mId;
  }
 }
