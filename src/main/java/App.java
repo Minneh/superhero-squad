@@ -26,7 +26,7 @@ public class App {
     get("/heroes", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("heroes", Hero.all());
-      model.put("template", "templates/heroes");
+      model.put("template", "templates/heroes.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
