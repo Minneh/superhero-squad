@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Squad{
   private String mName;
   private static List<Squad> instances = new ArrayList<Squad>();
@@ -23,5 +26,10 @@ public class Squad{
 
  public int getId(){
    return mId;
+ }
+
+//function to locate specific squad based on its id
+ public static Squad find(int id){
+   return instances.get(id - 1);
  }
 }

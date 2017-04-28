@@ -27,11 +27,26 @@ public class SquadTest {
   public void clear_emptiesAllSquadsFromList_0(){
     Squad testSquad = new Squad("Justice League");
     Squad.clear();
-    assertEquals(Category.all().size(), 0);
+    assertEquals(Squad.all().size(), 0);
   }
 
   @Test public void getId_squadsInstantiateWihtAnId_1(){
     Squad testSquad = new Squad("Justice League");
     assertEquals(1, testSquad.getId());
+  }
+
+  @Test
+  public void find_returnsSquadWithSameId_secondSquad() {
+    Squad.clear();
+    Squad firstSquad = new Squad("Justice League");
+    Squad secondSquad = new Squad("The Avengers");
+    assertEquals(Squad.find(secondSquad.getId()), secondSquad);
+  }
+
+  @Test
+  public void getHeroes_initiallyReturnsEmptyList_ArrayList(){
+    Squad.clear();
+    Squad testSquad = new Squad("Justice League");
+    assertEquals(0, testSquad.getHeroes().size());
   }
 }
