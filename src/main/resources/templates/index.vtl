@@ -1,14 +1,4 @@
-<h1>List of Heroes!</h1>
-#if ($hero)
-  <ul>
-    <!-- foreach loop to display all heroes -->
-    #foreach ($hero in $heroes)
-      <li>$hero.getName()</li>
-      <li>$hero.getAge()</li>
-      <li>$hero.getSpecialPower()</li>
-      <li>$hero.getWeakness()</li>
-    #end
-  </ul>
-#else
-  <p>No heroes!</p>
-#end
+<h1>Welcome to the Superhero Squad!</h1>
+
+<a href="/heroes/new">Add a new hero</a><br>
+<a href="/heroes">View all current heroes</a>
