@@ -17,7 +17,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("heroes/new", (request, response) -> {
+    get("/heroes/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/hero-form.vtl");
       return new ModelAndView(model, layout);
@@ -27,7 +27,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("heroes", Hero.all());
       model.put("template", "templates/heroes");
-      return nnew ModelAndView(model, layout);
+      return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     post("/heroes", (request, response) -> {
