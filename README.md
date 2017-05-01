@@ -1,6 +1,6 @@
 # Project Name: Superhero Squad
 
-An app that allows one to recruit a well-balanced team of superheroes.
+An app that allows one to recruit a team of superheroes and assign them to squads.
 
 ## Created by: Minneh Mugo
 
