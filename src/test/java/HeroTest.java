@@ -10,13 +10,13 @@ public class HeroTest{
 
   @Test
   public void Hero_instantiatesCorrectly_true(){
-    // Hero myHero = new Hero("Superman");
+    Hero myHero = new Hero("Superman", 35, "Flight", "Kryptonite");
     assertEquals(true, myHero instanceof Hero);
   }
 
   @Test
   public void Hero_instantiatesWithName_String() {
-    // Hero myHero = new Hero("Superman");
+    Hero myHero = new Hero("Superman", 35, "Flight", "Kryptonite");
     assertEquals("Superman", myHero.getName());
   }
   @Test
