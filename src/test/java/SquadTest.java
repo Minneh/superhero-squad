@@ -20,7 +20,7 @@ public class SquadTest {
     Squad firstSquad = new Squad("Justice League");
     Squad secondSquad = new Squad("The Avengers");
     assertEquals(true, Squad.all().contains(firstSquad));
-    assertEquals(true, Squad.all().contains(secondSquad);
+    assertEquals(true, Squad.all().contains(secondSquad));
   }
 
   @Test
@@ -31,6 +31,7 @@ public class SquadTest {
   }
 
   @Test public void getId_squadsInstantiateWihtAnId_1(){
+    Squad.clear();
     Squad testSquad = new Squad("Justice League");
     assertEquals(1, testSquad.getId());
   }
